@@ -1,22 +1,6 @@
-export type TipoInstrumento = 'TERMO_COPERACAO' | 'CONVENIO' | 'CONTRATO_REPASSE' | 'TERMO_FOMENTO'
+import type { Instrumento } from '@/types/instrumento'
 
-export type StatusInstrumento = 'RASCUNHO' | 'ASSINADO' | 'EM_EXECUCAO' | 'ENCERRADO'
-
-export interface Instrumento {
-  id: string
-  tipo: TipoInstrumento
-  numero: string
-  objeto: string
-  status: StatusInstrumento
-  convenioId: string
-  convenioNome: string
-  valor: number
-  dataAssinatura: string | null
-  dataVigenciaInicio: string
-  dataVigenciaFim: string
-  createdAt: string
-  updatedAt: string
-}
+export type { TipoInstrumento, StatusInstrumento } from '@/types/instrumento'
 
 export const instrumentos: Instrumento[] = [
   {

@@ -20,3 +20,21 @@
   --risk-vermelho-fg: oklch(0.4 0.18 25);
   --risk-vermelho-border: oklch(0.75 0.18 25);
 }
+
+.dark {
+  --risk-verde-bg: oklch(0.25 0.08 145);
+  --risk-verde-fg: oklch(0.8 0.12 145);
+  --risk-verde-border: oklch(0.35 0.12 145);
+
+  --risk-amarelo-bg: oklch(0.25 0.09 90);
+  --risk-amarelo-fg: oklch(0.82 0.13 80);
+  --risk-amarelo-border: oklch(0.35 0.14 85);
+
+  --risk-laranja-bg: oklch(0.25 0.1 55);
+  --risk-laranja-fg: oklch(0.82 0.14 45);
+  --risk-laranja-border: oklch(0.38 0.15 50);
+
+  --risk-vermelho-bg: oklch(0.25 0.1 25);
+  --risk-vermelho-fg: oklch(0.82 0.18 25);
+  --risk-vermelho-border: oklch(0.38 0.18 25);
+}

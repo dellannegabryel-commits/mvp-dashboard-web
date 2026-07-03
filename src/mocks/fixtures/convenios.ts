@@ -1,6 +1,6 @@
-export type StatusConvenio = 'ATIVO' | 'INATIVO' | 'SUSPENSO' | 'ENCERRADO'
+import type { StatusConvenio, StatusRisco } from '@/types/convenio'
 
-export type StatusRisco = 'VERDE' | 'AMARELO' | 'LARANJA' | 'VERMELHO'
+export type { StatusConvenio, StatusRisco }
 
 export interface Convenio {
   id: string
