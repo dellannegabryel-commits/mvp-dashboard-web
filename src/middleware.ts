@@ -1,9 +1,9 @@
 import { auth } from '@/lib/auth'
-import { NextResponse } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 
 const publicPaths = ['/login', '/api/auth']
 
-export default auth((req) => {
+const authMiddleware = auth((req) => {
   const { pathname } = req.nextUrl
 
   if (publicPaths.some((p) => pathname.startsWith(p))) {
@@ -21,6 +21,12 @@ export default auth((req) => {
 
   return NextResponse.next()
 })
+
+function bypassMiddleware(_req: NextRequest) {
+  return NextResponse.next()
+}
+
+export default process.env.NEXT_PUBLIC_BYPASS_AUTH === 'true' ? bypassMiddleware : authMiddleware
 
 export const config = {
   matcher: ['/((?!_next/static|_next/image|favicon.ico|mockServiceWorker\\.js|public/).*)'],
