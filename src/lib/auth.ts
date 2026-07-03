@@ -9,7 +9,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: 'Senha', type: 'password' },
       },
       async authorize(credentials) {
-        if (credentials?.email === 'admin@mvp.gov.br' && credentials?.password === 'admin') {
+        const email = String(credentials?.email ?? '')
+        const password = String(credentials?.password ?? '')
+
+        if (email === 'admin@mvp.gov.br' && password === 'admin') {
           return {
             id: '1',
             name: 'Admin',
